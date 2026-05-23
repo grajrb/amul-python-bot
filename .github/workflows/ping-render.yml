@@ -1,11 +1,16 @@
 name: Ping Render
 on:
   schedule:
-    - cron: "*/5 * * * *"  
+    - cron: "0 * * * *"  
   workflow_dispatch:    
 jobs:  
   ping:
     runs-on: ubuntu-latest  
     steps:    
-      - name: Ping Render service    
-        run: curl -s https://amul-python-bot-jhj1.onrender.com/health || true      
+      - name: Ping every 5 minutes for 1 hour    
+        run: |      
+          for i in 1 2 3 4 5 6 7 8 9 10 11 12; do        
+            echo "Ping $i of 12"          
+            curl -s https://amul-python-bot-jhj1.onrender.com/health || true            
+            sleep 300            
+          done            
