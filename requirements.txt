@@ -1,7 +1,9 @@
-python-telegram-bot==20.3
+python-telegram-bot==21.3
 apscheduler
 requests
 selenium
 beautifulsoup4
 flask
 python-dotenv
+httpx==0.27.0
+httpcore==1.0.5
